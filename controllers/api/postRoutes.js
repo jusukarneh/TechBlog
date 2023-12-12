@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post,User } = require('../../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('.../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -36,7 +36,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 
-//http://localhost:3001/api/posts/
+
 router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
